@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import { connect } from "react-redux"; //glue layer
+//dispaching the function
+import { createProject } from "../../store/actions/projectActions";
 class CreateProject extends Component {
   state = {
     title: "",
@@ -12,7 +15,8 @@ class CreateProject extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    //console.log(this.state);
+    this.props.createProject(this.state);
   };
   render() {
     return (
@@ -24,7 +28,7 @@ class CreateProject extends Component {
             <input type="text" id="title" onChange={this.handleChange} />
           </div>
           <div className="input-field">
-            <label htmlFor="content"> porject Content</label>
+            <label htmlFor="content"> project Content</label>
             <textarea
               id="content"
               className="materialize-textarea"
@@ -40,4 +44,14 @@ class CreateProject extends Component {
   }
 }
 
-export default CreateProject;
+//map the dispatch to props
+const mapDispachToProps = dispatch => {
+  return {
+    createProject: project => dispatch(createProject(project))
+  };
+};
+// it's null cuz we dont have the mapStateToProps function here
+export default connect(
+  null,
+  mapDispachToProps
+)(CreateProject);

@@ -22,7 +22,7 @@ class Dashboard extends Component {
     );
   }
 }
-// 8. we need to map our state from the store to the props of this component. We do that by creating ths function
+// 8. we need to map our state from the store to the props of this component. We do that by creating this function
 const mapStateToProps = state => {
   //9. return an Object that is going to represent which properties are attached to the props so we can access then inside this component
   return {
