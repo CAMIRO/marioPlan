@@ -15,7 +15,7 @@ function ProjectDetails(props) {
           </p>
         </div>
         <div className="card-action grey lighten-4 grey-text">
-          <div>Posted by camirop</div>
+          <div>Posted by camiro</div>
           <div>2nd September, 2am</div>
         </div>
       </div>
